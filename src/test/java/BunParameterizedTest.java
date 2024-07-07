@@ -1,9 +1,13 @@
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import praktikum.Bun;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
+
+import praktikum.Bun;
 
 @RunWith(Parameterized.class)
 public class BunParameterizedTest {
@@ -19,21 +23,25 @@ public class BunParameterizedTest {
     }
 
     @Parameterized.Parameters
-    public static Object[][] data() {
-        return new Object[][] {
+    public static Collection<Object[]> data() {
+        return Arrays.asList(new Object[][] {
                 { "white bun", 100.0f },
                 { "black bun", 200.0f },
-                { "red bun", 300.0f }
-        };
+                { "red bun", 300.0f },
+                {null, 0},
+                {"Русский", 1.05f},
+                {"!@#$%^&*()_+{}|:?><", Float.MIN_VALUE},
+                {"    ", Float.MAX_VALUE}
+        });
     }
 
     @Test
-    public void testGetName() {
+    public void bunGetNameReturnsCorrectName() {
         assertEquals(name, bun.getName());
     }
 
     @Test
-    public void testGetPrice() {
+    public void bunGetPriceReturnsCorrectPrice() {
         assertEquals(price, bun.getPrice(), 0.0f);
     }
 }
