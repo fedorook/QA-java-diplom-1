@@ -14,12 +14,10 @@ public class BunParameterizedTest {
 
     private final String name;
     private final float price;
-    private final Bun bun;
 
     public BunParameterizedTest(String name, float price) {
         this.name = name;
         this.price = price;
-        this.bun = new Bun(name, price);
     }
 
     @Parameterized.Parameters
@@ -37,11 +35,13 @@ public class BunParameterizedTest {
 
     @Test
     public void bunGetNameReturnsCorrectName() {
+        Bun bun = new Bun(name, price);
         assertEquals(name, bun.getName());
     }
 
     @Test
     public void bunGetPriceReturnsCorrectPrice() {
+        Bun bun = new Bun(name, price);
         assertEquals(price, bun.getPrice(), 0.0f);
     }
 }

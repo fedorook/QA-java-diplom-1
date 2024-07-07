@@ -16,13 +16,11 @@ public class IngredientParameterizedTest {
     private final IngredientType type;
     private final String name;
     private final float price;
-    private final Ingredient ingredient;
 
     public IngredientParameterizedTest(IngredientType type, String name, float price) {
         this.type = type;
         this.name = name;
         this.price = price;
-        this.ingredient = new Ingredient(type, name, price);
     }
 
     @Parameterized.Parameters
@@ -43,16 +41,19 @@ public class IngredientParameterizedTest {
 
     @Test
     public void ingredientGetTypeReturnsCorrectType() {
+        Ingredient ingredient = new Ingredient(type, name, price);
         assertEquals(type, ingredient.getType());
     }
 
     @Test
     public void ingredientGetNameReturnsCorrectName() {
+        Ingredient ingredient = new Ingredient(type, name, price);
         assertEquals(name, ingredient.getName());
     }
 
     @Test
     public void ingredientGetPriceReturnsCorrectPrice() {
+        Ingredient ingredient = new Ingredient(type, name, price);
         assertEquals(price, ingredient.getPrice(), 0.0f);
     }
 }
