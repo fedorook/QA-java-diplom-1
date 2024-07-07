@@ -46,4 +46,4 @@ nbdist/
 /shelf/
 
 # IntelliJ IDEA workspace
-/workspace.xml
+/.idea/workspace.xml
