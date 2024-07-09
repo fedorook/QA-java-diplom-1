@@ -25,17 +25,17 @@ public class IngredientParameterizedTest {
 
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
-        return Arrays.asList(new Object[][] {
-                { IngredientType.SAUCE, "hot sauce", 100.0f },
-                { IngredientType.SAUCE, "sour cream", 200.0f },
-                { IngredientType.SAUCE, "chili sauce", 300.0f },
-                { IngredientType.FILLING, "cutlet", 100.0f },
-                { IngredientType.FILLING, "dinosaur", 200.0f },
-                { IngredientType.FILLING, "sausage", 300.0f },
-                { null, null, 0.0f },
-                { IngredientType.SAUCE, "Русский", 1.05f },
-                { IngredientType.FILLING, "!@#$%^&*()_+{}|:?><", Float.MIN_VALUE },
-                { IngredientType.SAUCE, "    ", Float.MAX_VALUE }
+        return Arrays.asList(new Object[][]{
+                {IngredientType.SAUCE, "hot sauce", 100.0f},
+                {IngredientType.SAUCE, "sour cream", 200.0f},
+                {IngredientType.SAUCE, "chili sauce", 300.0f},
+                {IngredientType.FILLING, "cutlet", 100.0f},
+                {IngredientType.FILLING, "dinosaur", 200.0f},
+                {IngredientType.FILLING, "sausage", 300.0f},
+                {null, null, 0.0f},
+                {IngredientType.SAUCE, "Русский", 1.05f},
+                {IngredientType.FILLING, "!@#$%^&*()_+{}|:?><", Float.MIN_VALUE},
+                {IngredientType.SAUCE, "    ", Float.MAX_VALUE}
         });
     }
 
